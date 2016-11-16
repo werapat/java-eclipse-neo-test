@@ -55,6 +55,12 @@ public class Main {
       }
     }, new FreeMarkerEngine());
 
+    
+    get("/account", (req, res) ->  {
+    	String ID= req.queryParams("id");
+    	account acc =new account(ID);
+    	return acc.GetDetails();
+    });
   }
 
 }
